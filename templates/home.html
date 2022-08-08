@@ -1,1 +1,43 @@
-<h1>Hello World!</h1>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+ </head>
+
+<body>
+	<header>
+		<h1>Calculate your fitness goals.</h1>
+	</header>
+	
+	<main>
+		<div id="input-box">
+	        <form action="{{ url_for('calc') }}" method="post">
+			  <label for="height">Enter Height (in):</label><br>
+			  <input type="text" id="height" name="height" value="{{ height }}"><br>
+			  <label for="weight">Enter Weight (lbs):</label><br>
+			  <input type="text" id="weight" name="weight" value="{{ weight }}"><br>
+			  <input type="submit" value="Calculate">
+			</form> 
+      	</div>
+	  
+		 <div id="result">
+		    <form>
+			  <br>
+			  <label for="bmi">BMI:</label><br>
+			  <input type="text" id="bmi" name="bmi" value="{{ bmi }}"><br>
+			</form> 
+
+			<p> {{ status}} </p>
+		 </div>
+	  
+		 <div id="error">
+		    <p> {{ error }} </p>
+		 </div>
+	  
+	  	<a href="https://github.com/kdutta9/FitCalc" rel="noopener noreferrer" target="_blank"> 
+	  	Click to See GitHub Repository 
+		</a>
+	</main>
+</body>
+
